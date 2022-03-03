@@ -1,0 +1,138 @@
+* {
+    padding:0;
+    margin:0;
+}
+
+#startscreen {
+    opacity:1;
+    z-index:1;
+    background-color:black;
+    color:white;
+    display:flex;
+    justify-content:center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    align-items:center;
+    font-size:3vmax;
+    transition:1s;
+    height:100vh;
+}
+
+#playscreen {
+    opacity:0;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:0vh;
+    width:100vw;
+    transition:1s;
+    z-index: 4;
+}
+
+#scorer {
+    position:fixed;
+    display:flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items:center;
+    top:0;
+    left:0;
+    height:100%;
+    width:30vw;
+    font-size:1.8vmax;
+    z-index: 3;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    display:none;
+}
+
+#scorer #score {
+    margin-top:8vh;
+    font-size:5vmax;
+}
+
+#curb {
+    position:fixed;
+    right:0;
+    top:0;
+    height:200vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:70vw;
+    color:darkolivegreen;
+    background-image: url("https://previews.123rf.com/images/praewpailin/praewpailin2101/praewpailin210100016/163474878-green-grass-texture-for-background-green-lawn-pattern-and-texture-background-close-up-.jpg");
+    background-size: 200px 200px;
+    background-repeat: repeat;
+    z-index: 3;
+    display:none;
+    animation: slide 1s linear infinite;
+}
+
+@keyframes slide {
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+.road {
+    width:120px;
+    height:100%;
+    background-color: black;
+    background-image: url("https://slm-assets.secondlife.com/assets/25046675/lightbox/road.jpg?1574279647");
+    background-size: contain;
+    z-index: 2;
+    animation: slide 1s linear infinite;
+}
+
+.enemy {
+    height:200px;
+    width:80px;
+    z-index: 1;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+#player {
+    position:fixed;
+    height:200px;
+    width:80px;
+    background-image: url(./assets/player.png);
+    background-size: cover;
+    z-index: 1;
+    transform: rotate(0rad);
+    transition: left 0.5s, top 1s, transform 2s;
+}
+
+@keyframes enemycar {
+    0% {
+        margin-top: -200px;
+    }
+    100% {
+        margin-top: 100vh;
+    }
+}
+
+#endscreen {
+    display:none;
+    background-color: white;
+    color:black;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+}
+
+#endscreen strong {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 900;
+    font-size: 12vmax;
+    color:red;
+    margin-bottom: 5vh;
+}
+#endscreen p {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: 500;
+    font-size: 7vmax;
+    color:green;
+}
